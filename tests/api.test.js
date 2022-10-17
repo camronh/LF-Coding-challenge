@@ -3,9 +3,7 @@ const request = require("supertest");
 
 describe("GET /api/supervisors", function () {
   it("Fetches, cleans, and sorts supervisors", async function () {
-    const response = await request(app)
-      .get("/api/supervisors")
-      .set("Accept", "application/json");
+    const response = await request(app).get("/api/supervisors");
 
     expect(response.status).toEqual(200);
     const { body } = response;
@@ -42,8 +40,8 @@ describe("POST /api/submit", function () {
       firstName: "John",
       lastName: "Doe",
       supervisor: "a - Smith, John",
-    //   email: "cam@example.com",
-    //   phoneNumber: "555-555-5555",
+      //   email: "cam@example.com",
+      //   phoneNumber: "555-555-5555",
     });
     expect(response.status).toEqual(201);
   });

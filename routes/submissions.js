@@ -14,18 +14,12 @@ router.get("/supervisors", async (req, res) => {
       isNaN(manager.jurisdiction)
     );
 
-    // Sort using localCompare from https://www.benmvp.com/blog/quick-way-sort-javascript-array-multiple-fields/
-    const sortedManagers = filteredManagers.sort(
-      (a, b) =>
-        a.jurisdiction.localeCompare(b.jurisdiction) ||
-        a.lastName.localeCompare(b.lastName) ||
-        a.firstName.localeCompare(b.firstName)
-    );
-    const supervisorsList = sortedManagers.map(
+    const supervisorsList = filteredManagers.map(
       (supervisor) =>
         `${supervisor.jurisdiction} - ${supervisor.lastName}, ${supervisor.firstName}`
     );
-    res.status(200).json(supervisorsList);
+    const sortedSupervisors = supervisorsList.sort();
+    res.status(200).json(sortedSupervisors);
   } catch (error) {
     console.log(error);
     res.status(500).send("ERROR: Failed to fetch supervisors");
