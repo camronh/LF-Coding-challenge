@@ -4,24 +4,55 @@ A Dockerized API written in NodeJS. Uses [Axios](https://www.npmjs.com/package/a
 
 ## Setup
 
-Install dependencies
+### Install dependencies
 
 ```bash
-npm i
+yarn
 ```
 
-Run Tests
+### Run Tests
 
 ```bash
-npm test
+yarn test
 ```
-
-Start Server Locally
-
-```bash
-npm start
-```
-
 
 ## instructions
 
+> We will be running the server in Docker. Please be sure Docker is installed and running before moving on.
+
+### 1. Build the Docker image
+
+```bash
+yarn Build
+```
+
+### 2. Run the Docker image
+
+```bash
+yarn start
+```
+
+Your API should be running on port 9000 as well as a Swagger UI for your convenience at http://localhost:9000/api-docs
+
+### 3. Call API
+
+Open a new terminal to use for making API requests. An example of using the `GET /api/supervisors` endpoint is below:
+
+```bash
+curl -X GET "http://localhost:9000/api/supervisors"
+```
+
+Example of using the `POST /api/submit` endpoint is below:
+
+```bash
+curl -X POST "http://localhost:9000/api/submit" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"firstName\": \"string\", \"supervisor\": \"string\", \"email\": \"string\", \"phoneNumber\": \"string\"}"
+```
+
+
+## Removal
+
+Run to remove the container:
+
+```bash
+yarn remove
+```
