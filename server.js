@@ -5,8 +5,8 @@ const expressSwagger = require("express-swagger-generator")(app);
 let options = {
   swaggerDefinition: {
     info: {
-      description: "This is a sample server",
-      title: "Swagger",
+      description: "A dockerized express server with swagger docs",
+      title: "LF Code Challenge",
       version: "1.0.0",
     },
     host: "localhost:9000",
@@ -24,5 +24,5 @@ const port = 9000;
 app.listen(port, () => {
   console.log("Server has started! at http://localhost:9000");
   console.log("Swagger GUI available at http://localhost:9000/api-docs");
-  console.log("API Logs will be printed here:\n")
+  console.log("API Logs will be printed here:\n");
 });
