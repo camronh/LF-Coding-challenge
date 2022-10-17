@@ -20,11 +20,16 @@ router.get("/supervisors", async (req, res) => {
       isNaN(manager.jurisdiction)
     );
 
+    // Format into strings
     const supervisorsList = filteredManagers.map(
       (supervisor) =>
         `${supervisor.jurisdiction} - ${supervisor.lastName}, ${supervisor.firstName}`
     );
+
+    // Sort strings alphabetically, therefore sorted
+    // by jurisdiction, then last name, then first name
     const sortedSupervisors = supervisorsList.sort();
+
     res.status(200).json(sortedSupervisors);
   } catch (error) {
     console.log(error);
@@ -52,7 +57,7 @@ router.get("/supervisors", async (req, res) => {
 router.post("/submit", async (req, res) => {
   try {
     const { firstName, lastName, email, phoneNumber, supervisor } = req.body;
-    console.log("POST BODY:\n")
+    console.log("POST BODY:\n");
     console.log({ firstName, lastName, email, phoneNumber, supervisor });
     if (!firstName || !lastName || !supervisor) throw "Missing required fields";
     res.status(201).send("SUCCESS: Form submitted");
