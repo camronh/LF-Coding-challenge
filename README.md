@@ -4,13 +4,13 @@ A Dockerized API written in NodeJS. Uses [Axios](https://www.npmjs.com/package/a
 
 ## Setup (optional)
 
-### Install dependencies
+#### Install dependencies
 
 ```bash
 yarn
 ```
 
-### Run Unit Tests
+#### Run Unit Tests
 
 ```bash
 yarn test
@@ -20,13 +20,13 @@ yarn test
 
 > We will be running the server in Docker. Please be sure Docker is installed and running before moving on.
 
-### 1. Build the Docker image
+#### 1. Build the Docker image
 
 ```bash
 yarn build
 ```
 
-### 2. Run the Docker image
+#### 2. Run the Docker image
 
 ```bash
 yarn start
@@ -34,7 +34,7 @@ yarn start
 
 Your API should be running on port 9000 as well as a Swagger UI for your convenience at http://localhost:9000/api-docs
 
-### 3. Call API
+#### 3. Call API
 
 Open a new terminal to use for making API requests. An example of using the `GET /api/supervisors` endpoint is below:
 
