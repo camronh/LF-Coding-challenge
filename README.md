@@ -2,7 +2,7 @@
 
 A Dockerized API written in NodeJS. Uses [Axios](https://www.npmjs.com/package/axios) to make fetch the manager data from the URL provided in the instructions.
 
-## Setup
+## Setup (optional)
 
 ### Install dependencies
 
@@ -10,13 +10,13 @@ A Dockerized API written in NodeJS. Uses [Axios](https://www.npmjs.com/package/a
 yarn
 ```
 
-### Run Tests
+### Run Unit Tests
 
 ```bash
 yarn test
 ```
 
-## instructions
+## Instructions
 
 > We will be running the server in Docker. Please be sure Docker is installed and running before moving on.
 
