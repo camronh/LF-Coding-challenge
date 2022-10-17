@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "docker build . -t camronh/lightfeather-coding-challenge",
+    "run-container": "docker run -d -p 9000:9000 camronh/lightfeather-coding-challenge",
+    "get-supervisors": "curl -s localhost:9000/api/supervisors",
+    "stop": "docker rm -f camronh/lightfeather-coding-challenge"
   },
   "keywords": [],
   "author": "",
