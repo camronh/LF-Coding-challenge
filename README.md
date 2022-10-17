@@ -23,7 +23,7 @@ yarn test
 ### 1. Build the Docker image
 
 ```bash
-yarn Build
+yarn build
 ```
 
 ### 2. Run the Docker image
