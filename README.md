@@ -54,5 +54,5 @@ curl -X POST "http://localhost:9000/api/submit" -H "accept: application/json" -H
 Run to remove the container:
 
 ```bash
-yarn remove
+yarn stop
 ```
